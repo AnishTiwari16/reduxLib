@@ -1,12 +1,9 @@
-
+import React from 'react'
 
 function App() {
   return (
-    <div>
-      <h3>check</h3>
-    </div>
-
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App
