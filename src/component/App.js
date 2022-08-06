@@ -1,9 +1,9 @@
 import React from 'react'
-import HomeComponents from './HomeComponents'
+import HomeContainer from '../container/HOME/HomeContainer'
 
 function App() {
   return (
-    <HomeComponents />
+    <HomeContainer />
   )
 }
 

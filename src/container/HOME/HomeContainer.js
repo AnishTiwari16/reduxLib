@@ -1,9 +1,18 @@
 import React from 'react'
-
+import {DATA} from '../../config/HomeConfig/homeconfig'
 function HomeContainer() {
   return (
-    <div>homecontainer</div>
-    // logic
+    <div className = "container">
+    {DATA.map((props)=>(
+      <div className = "">
+      <h2>{props.headerTitle}</h2>
+      <p>{props.headerDesc}</p>
+      </div>
+    ))}
+    <div className="">
+      <h3>demo</h3>
+    </div>
+    </div>
   )
 }
 
