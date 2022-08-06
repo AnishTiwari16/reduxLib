@@ -1,9 +1,6 @@
-import React from 'react'
-
-function homeconfig() {
-  return (
-    <div>homeconfig</div>
-  )
-}
-
-export default homeconfig
+export const DATA = [
+  {
+    headerTitle : "Calculator",
+    headerDesc : "This is a Web Calc"
+  },
+];
