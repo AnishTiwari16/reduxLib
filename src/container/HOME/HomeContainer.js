@@ -10,7 +10,7 @@ function HomeContainer() {
       </div>
     ))}
     <div className="">
-      <h3>demo</h3>
+      <h3>Result</h3>
     </div>
     </div>
   )
