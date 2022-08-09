@@ -1,13 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from "react-redux";
 import { DATA_OF_PAGE } from "../../config/HomeConfig/HomeConfig";
 import {incNumber} from '../../redux/actions/HomeActions.js/action.increment';
 import {decNumber} from '../../redux/actions/HomeActions.js/action.decrement';
 import {resetNumber} from '../../redux/actions/HomeActions.js/action.reset';
 
-const HomeComponents = () => {
-  const currState = useSelector((state) => state.numberChange);
-  const dispatch = useDispatch();
+const HomeComponents = (props) => {
   return (
     <>
       {DATA_OF_PAGE.map((props) => (
@@ -17,13 +14,13 @@ const HomeComponents = () => {
         </div>
       ))}
       <div>
-        <button onClick={() => dispatch(decNumber(currState))}> <span> - </span> </button>
-        <input type="text" value={currState} />
-        <button onClick={() => dispatch(incNumber(currState))}>
+        <button onClick={() => props.dispatch(decNumber(props.state))}> <span> - </span> </button>
+        <input type="text" value={props.state} />
+        <button onClick={() => props.dispatch(incNumber(props.state))}>
           <span> + </span>
         </button>
         <br />
-        <button onClick={()=> dispatch(resetNumber())}><span> reset </span></button>
+        <button onClick={()=> props.dispatch(resetNumber())}><span> reset </span></button>
       </div>
     </>
   )

@@ -1,10 +1,16 @@
 import React from "react";
 import HomeComponents from "../../component/HomeComponents/HomeComponent";
+import { useSelector, useDispatch } from "react-redux";
 
-const HomeContainer = () => {
+const HomeContainer = (props) => {
+  const currState = useSelector((state) => state.numberChange);
+  const dispatch = useDispatch();
   return (
     <>
-    <HomeComponents />
+      <HomeComponents {...props}
+      state={currState} 
+      dispatch = {dispatch}
+      />
     </>
   );
 };
