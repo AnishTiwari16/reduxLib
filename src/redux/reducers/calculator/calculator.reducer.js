@@ -1,4 +1,4 @@
-import {INCREMENT,DECREMENT,RESET} from '../../actions/index.action';
+import {INCREMENT, DECREMENT,RESET} from '../../actions/index.action';
 
 const numberChange = (initialState = 0, action) => {
     switch (action.type) {
