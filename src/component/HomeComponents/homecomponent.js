@@ -1,8 +1,5 @@
 import React from 'react'
 import { DATA_OF_PAGE } from "../../config/HomeConfig/HomeConfig";
-import {incNumber} from '../../redux/actions/HomeActions.js/action.increment';
-import {decNumber} from '../../redux/actions/HomeActions.js/action.decrement';
-import {resetNumber} from '../../redux/actions/HomeActions.js/action.reset';
 
 const HomeComponents = (props) => {
   return (
@@ -14,13 +11,13 @@ const HomeComponents = (props) => {
         </div>
       ))}
       <div>
-        <button onClick={() => props.dispatch(decNumber(props.state))}> <span> - </span> </button>
+        <button onClick={() => (props.dispatch(props.decNumber(props.state)))}> <span> - </span> </button>
         <input type="text" value={props.state} />
-        <button onClick={() => props.dispatch(incNumber(props.state))}>
+        <button onClick={() => (props.dispatch(props.incNumber(props.state)))}>
           <span> + </span>
         </button>
         <br />
-        <button onClick={()=> props.dispatch(resetNumber())}><span> reset </span></button>
+        <button onClick={()=> (props.dispatch(props.resetNumber()))}><span> reset </span></button>
       </div>
     </>
   )
