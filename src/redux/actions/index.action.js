@@ -1,22 +1,8 @@
+//for increment
+export const INCREMENT = "INCREMENT";
 
-export const incNumber = (num) => {
-    const newNumber = num+1;
-    return {
-        type: "INCREMENT",
-        payload: newNumber
-    }
-}
-export const decNumber = (num) => {
-    const newNumber = num-1;
-    return{
-        type : "DECREMENT",
-        payload : newNumber 
-    }
-}
-export const resetNumber = () => {
-    const newNumber = 0;
-    return{
-        type: "RESET",
-        payload : newNumber
-    }
-}
+//for decrement
+export const DECREMENT = "DECREMENT";
+
+//for reset
+export const RESET = "RESET";

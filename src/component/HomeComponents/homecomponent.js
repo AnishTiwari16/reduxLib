@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { DATA } from "../../config/HomeConfig/homeconfig";
-import { incNumber, decNumber, resetNumber } from '../../redux/actions/index.action';
+import {incNumber} from '../../redux/actions/INCREMENT/action.increment';
+import {decNumber} from '../../redux/actions/DECREMENT/action.decrement';
+import {resetNumber} from '../../redux/actions/RESET/action.reset';
 
 const HomeComponents = () => {
   const currState = useSelector((state) => state.numberChange);
