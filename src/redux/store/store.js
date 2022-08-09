@@ -1,9 +1,8 @@
-//now we will add our root reducer to the store
+//we will create a global store from root Reducer
 
-//we will create the global store
-
-import rootReducer from '../reducers/index';
+import rootReducer from '../reducers/index.reducer';
 import { legacy_createStore as createStore } from 'redux';
+
 
 const store = createStore(rootReducer);
 

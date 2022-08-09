@@ -1,6 +1,6 @@
 export const DATA = [
   {
-    headerTitle : "Calculator",
-    headerDesc : "This is a Redux Calc"
+    dataHeading : "Redux Calculator",
+    dataDesc : "This is a redux logic incrementor"
   },
 ];

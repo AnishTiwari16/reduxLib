@@ -1,14 +1,11 @@
-// how to do it
-//it takes two args => curr state and action and then it will return the new state
 
-const initialState = 0;
+//here we combine all the reducer into rootReducer
 
-const changeNumber = (state = initialState, action) => {
-    switch(action.type){
-        case "INCREMENT" : return state+1;
-        case "DECREMENT" : return state-1;
-        default : return state;
-    }
-}
-export default changeNumber;
+import { combineReducers } from "redux";
+import numberChange from './calculator_reducer/calculator.reducer';
 
+const rootReducer = combineReducers({
+    numberChange
+});
+
+export default  rootReducer;

@@ -1,12 +1,22 @@
-// how to do
-  
-export const incNumber = () => {
+
+export const incNumber = (num) => {
+    const newNumber = num+1;
     return {
-        type: "INCREMENT"
+        type: "INCREMENT",
+        payload: newNumber
     }
 }
-export const decNumber = () => {
-    return {
-        type: "DECREMENT"
+export const decNumber = (num) => {
+    const newNumber = num-1;
+    return{
+        type : "DECREMENT",
+        payload : newNumber 
+    }
+}
+export const resetNumber = () => {
+    const newNumber = 0;
+    return{
+        type: "RESET",
+        payload : newNumber
     }
 }
