@@ -1,24 +1,26 @@
-import React from "react";
-import HomeComponents from "../../component/HomeComponents/HomeComponent";
-import { useSelector, useDispatch } from "react-redux";
-import {incNumber} from '../../redux/actions/HomeActions.js/action.increment';
-import {decNumber} from '../../redux/actions/HomeActions.js/action.decrement';
-import {resetNumber} from '../../redux/actions/HomeActions.js/action.reset';
-
+import React from 'react';
+import { connect } from 'react-redux';
+import HomeComponents from '../../component/HomeComponents/HomeComponent';
+import {
+    incNumber,
+    decNumber,
+    resetNumber,
+} from '../../redux/actions/HomeActions/action.home';
 const HomeContainer = (props) => {
-  const currState = useSelector((state) => state.numberChange);
-  const dispatch = useDispatch();
-  return (
-    <>
-      <HomeComponents {...props}
-      state={currState} 
-      dispatch = {dispatch}
-      decNumber = {decNumber}
-      incNumber = {incNumber}
-      resetNumber = {resetNumber}
-      />
-    </>
-  );
+    return (
+        <>
+            <HomeComponents {...props} />
+        </>
+    );
 };
 
-export default HomeContainer;
+const mapDispatchToProps = (dispatch) => ({
+    IncrementAction: (payload) => dispatch(incNumber(payload)),
+    DecrementAction: (payload) => dispatch(decNumber(payload)),
+    ResetAction: (payload) => dispatch(resetNumber(payload)),
+});
+
+const mapStateToProps = (state) => ({
+    currentNumber: state.numberChange,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
