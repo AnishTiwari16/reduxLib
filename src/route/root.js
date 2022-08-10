@@ -8,7 +8,7 @@ function Root() {
             <BrowserRouter>
                 <Routes>
                     <Route exact path="/" element={<HomeContainer />} />
-                    <Route path="*" element={<HomeContainer />} />
+                    <Route path="*" element={<div>hello</div>} />
                 </Routes>
             </BrowserRouter>
         </>

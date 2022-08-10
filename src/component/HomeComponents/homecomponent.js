@@ -11,16 +11,16 @@ const HomeComponents = (props) => {
                 </div>
             ))}
             <div>
-                <button onClick={() => props.IncrementAction()}>
+                <button onClick={() => props.decNumber()}>
                     {' '}
                     <span> - </span>{' '}
                 </button>
-                <input type="text" value={props.state} />
-                <button onClick={() => props.DecrementAction()}>
+                <input type="text" value={props.currentNumber} />
+                <button onClick={() => props.incNumber()}>
                     <span> + </span>
                 </button>
                 <br />
-                <button onClick={() => props.ResetAction()}>
+                <button onClick={() => props.resetNumber()}>
                     <span> reset </span>
                 </button>
             </div>

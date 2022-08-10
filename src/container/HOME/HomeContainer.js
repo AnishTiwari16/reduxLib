@@ -15,9 +15,9 @@ const HomeContainer = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    IncrementAction: (payload) => dispatch(incNumber(payload)),
-    DecrementAction: (payload) => dispatch(decNumber(payload)),
-    ResetAction: (payload) => dispatch(resetNumber(payload)),
+    incNumber: (payload) => dispatch(incNumber(payload)),
+    decNumber: (payload) => dispatch(decNumber(payload)),
+    resetNumber: (payload) => dispatch(resetNumber(payload)),
 });
 
 const mapStateToProps = (state) => ({
