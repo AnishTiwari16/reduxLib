@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import HomeContainer from './container/HOME/HomeContainer';
-import store from './redux/store/store';
 import { Provider } from 'react-redux';
+import configureStore from './redux/store/store';
+import Root from '../src/route/root';
 
+const store = configureStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Provider store = {store}>
-    <HomeContainer />
-    </Provider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
+            <Root />
+        </Provider>
+    </React.StrictMode>
 );

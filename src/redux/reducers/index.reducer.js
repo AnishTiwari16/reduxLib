@@ -1,10 +1,10 @@
 //here we combine all the reducer into rootReducer
 
-import { combineReducers } from "redux";
-import numberChange from "./calculator/calculator.reducer";
+import { combineReducers } from 'redux';
+import numberChange from './home/home.reducer';
 
 const rootReducer = combineReducers({
-    numberChange
+    numberChange,
 });
 
 export default rootReducer;

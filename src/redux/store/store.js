@@ -1,9 +1,33 @@
 //we will create a global store from root Reducer
 
 import rootReducer from '../reducers/index.reducer';
-import { legacy_createStore as createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
+// const store = createStore(rootReducer);
+const loggerMiddleware = createLogger();
 
-const store = createStore(rootReducer);
+let middleware = [];
 
-export default store;
+if (process.env.NODE_ENV !== 'production') {
+    let logger = loggerMiddleware;
+    let thunk = thunkMiddleware;
+    middleware = [...middleware, thunk, logger];
+} else {
+    let thunk = thunkMiddleware;
+    middleware = [...middleware, thunk];
+}
+
+const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
+
+const configureStore = function (initialState) {
+    if (initialState === void 0) {
+        initialState = {};
+    }
+    return createStoreWithMiddleware(rootReducer, initialState);
+};
+
+export default configureStore;
+
+// export default store;
