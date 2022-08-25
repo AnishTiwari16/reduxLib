@@ -2,6 +2,7 @@ import { INCREMENT, DECREMENT, RESET } from '../index.action';
 
 export const incNumber = (num) => {
     const newNumber = num + 1;
+    // console.log(newNumber);
     return {
         type: INCREMENT,
         payload: newNumber,

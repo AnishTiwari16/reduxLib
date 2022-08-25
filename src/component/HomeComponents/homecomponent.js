@@ -11,12 +11,12 @@ const HomeComponents = (props) => {
                 </div>
             ))}
             <div>
-                <button onClick={() => props.decNumber()}>
+                <button onClick={() => props.decNumber(props.currentNumber)}>
                     {' '}
                     <span> - </span>{' '}
                 </button>
                 <input type="text" value={props.currentNumber} />
-                <button onClick={() => props.incNumber()}>
+                <button onClick={() => props.incNumber(props.currentNumber)}>
                     <span> + </span>
                 </button>
                 <br />
